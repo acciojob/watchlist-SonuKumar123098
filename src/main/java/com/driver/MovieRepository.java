@@ -55,9 +55,15 @@ public class MovieRepository {
         if(hDirectors.containsKey(name)){
             hDirectors.remove((name));
         }
+        for(String movie:hMovieDirector.keySet()){
+            if(hMovieDirector.get(movie).equals(name)){
+                hMovies.remove(movie);
+            }
+        }
     }
 
     public void deleteAllDirectors() {
         hDirectors.clear();
+        hMovies.clear();
     }
 }
